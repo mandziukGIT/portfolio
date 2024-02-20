@@ -8,4 +8,10 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  modules: ['@nuxtjs/google-fonts'], 
+  googleFonts: {
+    families: {
+      Montserrat: '200..700'
+    }
+  }
 })
