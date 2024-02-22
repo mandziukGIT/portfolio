@@ -1,7 +1,7 @@
 <script setup lang='ts'>
 </script>
 <template>
-    <header class='flex justify-between py-5 items-center'>
+    <header class='flex justify-between py-5 items-center max-w-screen-2xl mx-auto px-10 2xl:px-0'>
         <NuxtLink to="/">
             <p>
                 <span class="font-bold">MANDZIUK</span> <br/>
