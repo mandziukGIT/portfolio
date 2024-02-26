@@ -2,6 +2,7 @@
 </script>
 <template>
     <main>
-        <Hero />
+        <Hero/>
+        <Experience />
     </main>
 </template>

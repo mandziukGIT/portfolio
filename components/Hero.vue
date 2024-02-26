@@ -1,7 +1,7 @@
 <script setup lang='ts'>
 </script>
 <template>
-    <section class='flex justify-between items-center mt-20 gap-14' >
+    <section class='flex justify-between items-center mt-20 gap-14 max-w-screen-2xl mx-auto px-10 2xl:px-0 h-full' >
         <div class="flex flex-col w-1/2">
             <p class="text-gray-500 font-semibold tracking-widest font-light">FRONTEND DEVELOPER</p>
             <h1 class="text-8xl font-bold">

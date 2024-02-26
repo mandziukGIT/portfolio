@@ -1,8 +1,6 @@
 <template>
-  <div class='max-w-screen-2xl mx-auto px-10 2xl:px-0'>
-    <Header />
-    <NuxtPage />
-  </div>
+  <Header />
+  <NuxtPage />
 </template>
 <style>
 body {
