@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kacper Mandziuk - Portfolio</title>
+    <link rel="stylesheet"  href="./styles/css/main.css"/>
+    <script type="importmap">
+        {
+          "imports": {
+            "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+          }
+        }
+    </script>
+    <script type='module'>
+        import { createApp, ref } from 'vue';
+
+        createApp({
+            setup() {
+                const author = ref("Kacper Mandziuk")
+
+                return {
+                    author
+                }
+            }
+        }).mount('#app')
+    </script>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>{{ author }}</h1>
+            <p>Web Developer | Designer | [Your Skills]</p>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod risus eget nibh blandit, vitae maximus magna aliquam. Donec nec diam at libero rutrum elementum.</p>
+        </section>
+    
+        <section id="projects">
+            <h2>Projects</h2>
+            <ul>
+                <li>
+                    <h3>Project 1 Title</h3>
+                    <p>A brief description of your project 1.</p>
+                    <a href="#">Link to project (optional)</a>
+                </li>
+                <li>
+                    <h3>Project 2 Title</h3>
+                    <p>A brief description of your project 2.</p>
+                    <a href="#">Link to project (optional)</a>
+                </li>
+            </ul>
+        </section>
+    
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Get in touch with me!</p>
+            <ul>
+                <li>Email: [Your Email]</li>
+                <li>Social Media: [Links to your social media profiles (optional)]</li>
+            </ul>
+        </section>
+    
+        <footer>
+            <p>&copy; {{ author }} - [Year]</p>
+        </footer>
+    </div>
+</body>
+</html>
