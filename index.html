@@ -28,17 +28,37 @@
 </head>
 <body>
     <div id="app">
-        <header>
-            <h1>{{ author }}</h1>
-            <p>Web Developer | Designer | [Your Skills]</p>
+        <header class="header">
+            <img src="assets/images/logo.svg" alt="logo" />
+            <nav class="header__navigation">
+                <ul>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#projects">PROJECTS</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </nav>
         </header>
-        <nav>
-            <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+
+        <div class="badge">
+            <div class="badge__beacon"></div>
+            <p class="badge__label">OPEN TO WORK</p>
+        </div>
+
+        <section id="home" class='home__container'>
+            <div class="home__copy-text">
+                <span>
+                    <h1>
+                        Hi my name is <br>
+                        <span class="text-xl text-gradient">Kacper</span>&nbsp<span class="text-xl text-gradient home__heading--stroke">Mandziuk</span> 
+                    </h1> 
+                </span>
+                <p class="home__brief">Im self thought <span class="home__brief--bold text-gradient">WEB DEVELOPER</span>, with over 3 years of commercial experience. Of course I love to code, but it is only one thing among others.</p>
+                <a href="#about">Explore my work<img src='/assets/icons/explore.svg' alt='explore icon' /></a>
+            </div>
+            <div>
+                <img src="assets/images/freelancer.svg" alt="hero image">
+            </div>
+        </section>
     
         <section id="about">
             <h2>About Me</h2>
