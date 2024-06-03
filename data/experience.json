@@ -1,0 +1,32 @@
+[
+    {
+        "id": "1",
+        "company": "Monterail",
+        "position": "Frontend Developer",
+        "employment_start": "05.2021",
+        "employment_finish": "03.2023",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dictum luctus vulputate. Cras et nisi eu justo porta ultrices quis id ipsum. Nam odio arcu, efficitur eu sagittis luctus, sagittis ac turpis. Ut et tortor luctus, ultrices urna vitae, eleifend arcu. Suspendisse eget iaculis quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dictum luctus vulputate. Cras et nisi eu justo porta ultrices quis id ipsum. Nam odio arcu, efficitur eu sagittis luctus, sagittis ac turpis.",
+        "badges": [
+            "official vue partner",
+            "remote",
+            "software house"
+        ],
+        "tech": [
+            "vue", "nuxt", "vuex", "pinia", "typescript", "javascript", "css", "html"
+        ]
+    },
+    {
+        "id": "2",
+        "company": "Auroria",
+        "position":"Javascript Internship",
+        "employment_start": "03.2019",
+        "employment_finish": "03.2020",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dictum luctus vulputate. Cras et nisi eu justo porta ultrices quis id ipsum. Nam odio arcu, efficitur eu sagittis luctus, sagittis ac turpis. Ut et tortor luctus, ultrices urna vitae, eleifend arcu. Suspendisse eget iaculis quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dictum luctus vulputate. Cras et nisi eu justo porta ultrices quis id ipsum. Nam odio arcu, efficitur eu sagittis luctus, sagittis ac turpis.",
+        "badges": [
+            "office", "e-commerce"
+        ],
+        "tech": [
+            "vue", "nuxt", "vuex", "pinia", "typescript", "javascript", "css", "html"
+        ]
+    }
+]
