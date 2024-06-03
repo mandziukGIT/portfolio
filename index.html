@@ -116,7 +116,7 @@
                     <div v-if="experience.length" class="about__work-experience">
                         <ul>
                             <li :class="{'active': currentRecordId === record.id }" v-for="record in experience" :key="record.id" @click="changeTab(record.id)">
-                                <img :src="`assets/images/${record.company}-logo.svg`" alt="" style="color: red">
+                                <img :src="`assets/images/${record.company.toLowerCase()}-logo.svg`" alt="" style="color: red">
                             </li>
                         </ul>
                         <experience-record :record="currentTabExperience"/>
