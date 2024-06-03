@@ -228,14 +228,14 @@ header, footer, section > div {
 }
 
 .about__motto::before {
-    content: url('/portfolio/assets/images/left-frame.svg') url('/assets/icons/left-frame.svg');
+    content: url('/portfolio/assets/images/left-frame.svg') url('/assets/images/left-frame.svg');
     position: absolute;
     top: -20px;
     left: -20px;
 }
 
 .about__motto::after {
-    content: url('/portfolio/assets/images/right-frame.svg') url('/assets/icons/right-frame.svg');
+    content: url('/portfolio/assets/images/right-frame.svg') url('/assets/images/right-frame.svg');
     position: absolute;
     top: -15px;
     right: -20px;
@@ -291,7 +291,7 @@ header, footer, section > div {
 }
 
 .about__author-intro a::after {
-    content: url('/portfolio/assets/images/arrow-right.svg') url('/assets/icons/arrow-right.svg');
+    content: url('/portfolio/assets/icons/arrow-right.svg') url('/assets/icons/arrow-right.svg');
     position: absolute;
     right: -40px;
     opacity: 1;
@@ -371,12 +371,12 @@ header, footer, section > div {
 }
 
 .about__work-experience li::after {
-    content: url('/portfolio/assets/images/arrow-left.svg') url('/assets/icons/arrow-left.svg');
+    content: url('/portfolio/assets/icons/arrow-left.svg') url('/assets/icons/arrow-left.svg');
     right: -80px;
 }
 
 .about__work-experience li::before {
-    content: url('/portfolio/assets/images/arrow-right.svg') url('/assets/icons/arrow-right.svg');
+    content: url('/portfolio/assets/icons/arrow-right.svg') url('/assets/icons/arrow-right.svg');
     left: -80px;
 }
 
