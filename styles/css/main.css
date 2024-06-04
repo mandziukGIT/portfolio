@@ -38,10 +38,12 @@ ul {
 
 .heading-1 {
     font-size: 64px;
+    line-height: 50%;
 }
 
 .heading-2 {
     font-size: 48px;
+    line-height: 50%;
 }
 
 .heading-3 {
@@ -51,7 +53,6 @@ ul {
 .heading-2:after {
     content: '.';
     font-size: 96px;
-    line-height: 50%;
 }
 
 #projects .heading-2:after, #contact .heading-2:after {
