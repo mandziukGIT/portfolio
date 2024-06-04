@@ -9,6 +9,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html {
@@ -389,4 +390,53 @@ header, footer, section > div {
     flex-direction: column;
     gap: 100px;
     margin: 100px 0 ;
+}
+
+/* CONTACT */
+
+#contact {
+    padding-top: 100px;
+}
+
+.contact__options-list {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin: 100px 0;
+    padding: 50px 0;
+}
+
+.contact__options-list:before {
+    content: url('/portfolio/assets/images/square-waves.svg') url('/assets/images/square-waves.svg');
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: -100px;
+}
+
+.contact__options-list:after {
+    content: url('/portfolio/assets/images/dotted-mesh.svg') url('/assets/images/dotted-mesh.svg');
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    right: -80px;
+}
+
+.contact__option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    width: 100%;
+    background-color: #DFEAF7;
+    border-radius: 10px;
+    padding: 50px;
+    font-family: "Roboto condensed", sans-serif;
+    font-weight: 700;
+    transition: transform 0.2s ease;
+}
+
+.contact__option:hover {
+    transform: scale(1.05);
 }
