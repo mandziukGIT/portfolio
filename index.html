@@ -54,7 +54,9 @@
 <body>
     <div id="app">
         <header class="header">
+            <a href="https://mandziukgit.github.io/portfolio/">
                 <img src="assets/images/logo.svg" alt="logo" />
+            </a>
             <nav class="header__navigation">
                 <ul>
                     <li><a href="#about">ABOUT</a></li>
@@ -66,7 +68,7 @@
         
 
         <section id="home">
-            <div class='home__container'>
+            <div class='content-wrapper home__container'>
                 <div class="home__copy-text">
                     <div class="badge">
                         <div class="badge__beacon"></div>
@@ -120,7 +122,7 @@
                     <div v-if="experience.length" class="about__work-experience">
                         <ul>
                             <li :class="{'active': currentRecordId === record.id }" v-for="record in experience" :key="record.id" @click="changeTab(record.id)">
-                                <img :src="`assets/images/${record.company.toLowerCase()}-logo.svg`" alt="" style="color: red">
+                                <img :src="`assets/images/${record.company.toLowerCase()}-logo.svg`" alt="">
                             </li>
                         </ul>
                         <experience-record :record="currentTabExperience"/>
@@ -176,8 +178,21 @@
             </div>
         </section>
     
-        <footer>
-            <p>&copy; {{ author }} - [Year]</p>
+        <footer class="footer">
+            <div class='content-wrapper'>
+                <a href="https://mandziukgit.github.io/portfolio/">
+                    <img src="assets/images/logo.svg" alt="logo" />
+                </a>
+                <p>&copy; All rights reserved - 2024</p>
+                <div class="footer__socials">
+                    <a href="https://github.com/mandziukGIT" target="_blank">
+                        <img src="assets/icons/github.svg" alt="" />
+                    </a>
+                    <a href="https://linkedin.com/in/kacper-mandziuk" target="_blank">
+                        <img src="assets/icons/linkedin.svg" alt="" />
+                    </a>
+                </div>
+            </div>
         </footer>
     </div>
 </body>
