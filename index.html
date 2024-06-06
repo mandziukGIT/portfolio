@@ -53,7 +53,7 @@
 </head>
 <body>
     <div id="app">
-        <header class="header">
+        <header class="header content-wrapper">
             <a href="https://mandziukgit.github.io/portfolio/">
                 <img src="assets/images/logo.svg" alt="logo" />
             </a>
@@ -64,24 +64,27 @@
                     <li><a href="#contact">CONTACT</a></li>
                 </ul>
             </nav>
+            <button class="header__hamburger">
+                <img src="assets/icons/menu-hamburger.svg" alt="">
+            </button> 
         </header>
         
 
         <section id="home">
             <div class='content-wrapper home__container'>
-                <div class="home__copy-text">
+                <div class="home__hero-text">
                     <div class="badge">
                         <div class="badge__beacon"></div>
                         <p class="badge__label">OPEN TO WORK</p>
                     </div>
-                    <h1 class="heading-1">
-                        <span class="home__greeting">Hi my name is </span><br> 
-                        <span class="text-gradient">Kacper</span>&nbsp<span class="text-xl text-gradient home__heading--stroke">Mandziuk</span> 
+                    <p class="home__greeting">Hi my name is </p>
+                    <h1 class="home__main-heading heading-1 text-gradient">
+                        Kacper&nbspMandziuk<br>
                     </h1> 
                     <p class="home__brief">Im self thought <span class="home__brief--bold text-gradient">WEB DEVELOPER</span>, with over 3 years of commercial experience. Of course I love to code, but it is only one thing among others.</p>
                     <a class="button" href="#about">Explore my work<img src='assets/icons/explore.svg' alt='explore icon' /></a>
                 </div>
-                <div>
+                <div class="home__hero-image">
                     <img src="assets/images/freelancer.svg" alt="hero image">
                 </div>
             </div>
