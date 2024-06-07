@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
+@import "navigation.css";
 
 /* CSS override */
 
@@ -97,39 +98,24 @@ button {
 /* HEADER */
 
 .header {
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+}
+
+.header > div {
     display: flex;
     justify-content: space-between;
-    padding-top: 20px;
-}
-
-.header__navigation ul {
-    display: none;
-    list-style: none;
-    gap: 20px;
-}
-
-.header__navigation li:hover {
-    border-bottom: var(--color-grey) 2px solid;
-}
-
-.header__navigation a {
-    color: var(--color-grey)
-}
-
-@media (min-width: 640px) {
-    .header__navigation ul {
-        display: flex;
-    }
-    .header__hamburger {
-        display: none;
-    }
-
+    align-items: center;
+    padding: 15px 25px
 }
 
 /* HOME section */
 
 #home {
-    margin: 25px 0;
+    margin: 100px 0 50px 0;
 }
 
 .home__container {
@@ -185,7 +171,7 @@ button {
 
 @media (min-width: 640px) {
     #home {
-        margin: 75px 0;
+        margin: 125px 0 75px 0;
     }
 
     .home__greeting {

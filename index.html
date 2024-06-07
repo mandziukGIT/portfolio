@@ -28,6 +28,8 @@
                 const experience = ref([]);
                 const techstack = ref([]);
                 const projects = ref([]);
+                const hamburger = ref([]);
+                const nav = ref();
 
                 const currentRecordId = ref('1');
 
@@ -39,11 +41,19 @@
 
                 const currentTabExperience = computed(() => experience.value.find(el => el.id === currentRecordId.value));
 
+                const toggleMobileNav = () => {
+                    nav.value.classList.toggle('active');
+                    hamburger.value.classList.toggle('active');
+                } 
+
                 return {
+                    nav,
                     projects,
+                    hamburger,
                     techstack,
                     changeTab,
                     experience,
+                    toggleMobileNav,
                     currentRecordId,
                     currentTabExperience
                 }
@@ -53,20 +63,24 @@
 </head>
 <body>
     <div id="app">
-        <header class="header content-wrapper">
-            <a href="https://mandziukgit.github.io/portfolio/">
-                <img src="assets/images/logo.svg" alt="logo" />
-            </a>
-            <nav class="header__navigation">
-                <ul>
-                    <li><a href="#about">ABOUT</a></li>
-                    <li><a href="#projects">PROJECTS</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
-                </ul>
-            </nav>
-            <button class="header__hamburger">
-                <img src="assets/icons/menu-hamburger.svg" alt="">
-            </button> 
+        <header class="header">
+            <div class="content-wrapper">
+                <a href="https://mandziukgit.github.io/portfolio/">
+                    <img src="assets/images/logo.svg" alt="logo" />
+                </a>
+                <nav ref="nav" class="header__navigation">
+                    <ul>
+                        <li @click="toggleMobileNav"><a href="#about">About me</a></li>
+                        <li @click="toggleMobileNav"><a href="#projects">Project</a></li>
+                        <li @click="toggleMobileNav"><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <button ref='hamburger' class="header__hamburger" @click="toggleMobileNav">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </button>
+            </div>
         </header>
         
 
