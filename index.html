@@ -6,15 +6,18 @@
     <title>Kacper Mandziuk - Portfolio</title>
     <link rel="stylesheet"  href="styles/css/main.css"/>
     <link rel="stylesheet"  href="styles/css/components.css"/>
+    <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script type="importmap">
         {
           "imports": {
-            "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+            "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js",
+            "swiper": "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs"
           }
         }
     </script>
     <script type='module'>
         import { createApp, ref, computed } from 'vue';
+        import Swiper from 'swiper';
 
         import ExperienceRecord from './components/experience-record.js'
         import ProjectCard from './components/project-card.js'
@@ -30,8 +33,28 @@
                 const projects = ref([]);
                 const hamburger = ref([]);
                 const nav = ref();
+                
 
-                const currentRecordId = ref('1');
+                const swiper = new Swiper('.swiper', {
+                        init: false,
+                        spaceBetween: 75,
+                        slidesPerView: 1,
+                        grabCursor: true,
+                        pagination: {
+                            el: ".swiper-pagination"
+                        },
+                        breakpoints: {
+                            640: {
+                                spaceBetween: 0,
+                                slidesPerView: 1,
+                            },
+                            768: {
+                                slidesPerView: 2,
+                                spaceBetween: 75
+                            }
+                        }
+                    });
+
 
                 fetch('./data/experience.json').then(res => res.text()).then(res => experience.value = JSON.parse(res));
                 fetch('./data/techstack.json').then(res => res.text()).then(res => techstack.value = JSON.parse(res));
@@ -39,12 +62,12 @@
                 
                 const changeTab = (tabId) => currentRecordId.value = tabId;
 
-                const currentTabExperience = computed(() => experience.value.find(el => el.id === currentRecordId.value));
-
                 const toggleMobileNav = () => {
                     nav.value.classList.toggle('active');
                     hamburger.value.classList.toggle('active');
                 } 
+
+                const swiperInit = () => swiper.init();
 
                 return {
                     nav,
@@ -52,13 +75,12 @@
                     hamburger,
                     techstack,
                     changeTab,
+                    swiperInit,
                     experience,
                     toggleMobileNav,
-                    currentRecordId,
-                    currentTabExperience
                 }
             },
-        }).mount('#app')
+        }).mount('#app');
     </script>
 </head>
 <body>
@@ -83,7 +105,6 @@
             </div>
         </header>
         
-
         <section id="home">
             <div class='content-wrapper home__container'>
                 <div class="home__hero-text">
@@ -91,9 +112,9 @@
                         <div class="badge__beacon"></div>
                         <p class="badge__label">OPEN TO WORK</p>
                     </div>
-                    <p class="home__greeting">Hi my name is </p>
+                    <p class="home__greeting">Hi my name is</p>
                     <h1 class="home__main-heading heading-1 text-gradient">
-                        Kacper&nbspMandziuk<br>
+                        Kacper Mandziuk<br>
                     </h1> 
                     <p class="home__brief">Im self thought <span class="home__brief--bold text-gradient">WEB DEVELOPER</span>, with over 3 years of commercial experience. Of course I love to code, but it is only one thing among others.</p>
                     <a class="button" href="#about">Explore my work<img src='assets/icons/explore.svg' alt='explore icon' /></a>
@@ -107,7 +128,6 @@
         <section id="about">
             <div class='content-wrapper'>
                 <h2 class="heading-2">About me and <br> my experience</h2>
-                <!-- <p class="about__motto">I solve problems and translate SOLUTIONS into CODE</p> -->
                 <div class="about__author">
                     <div class="about__image">
                         <img src="assets/images/kacper.jpg" alt="author image"/>
@@ -116,9 +136,6 @@
                         <p>
                             Im fan of vue and whole ecosystem build around it, including nuxt for creating server rendered pages. When Im not coding, I usually go to the gym, or spend time with people I love. Good coffee and good book is my thing. In the end doing all of that is very exhausing, so I try not to forget about resting and relaxing 
                         </p>
-                        <a href="https://www.linkedin.com/in/kacper-mandziuk/details/recommendations/" target="_blank">
-                            What others say about me
-                        </a>
                     </div>
                     <div class="about__socials">
                         <a href="https://github.com/mandziukGIT" target="_blank">
@@ -138,25 +155,24 @@
                             Download CV
                         </a>
                     </div>
-                    <div v-if="experience.length" class="about__work-experience">
-                        <ul>
-                            <li :class="{'active': currentRecordId === record.id }" v-for="record in experience" :key="record.id" @click="changeTab(record.id)">
-                                <img :src="`assets/images/${record.company.toLowerCase()}-logo.svg`" alt="">
-                            </li>
-                        </ul>
-                        <experience-record :record="currentTabExperience"/>
+                    <div class="about__swiper swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" v-for='exp in experience' :key="exp.id"> 
+                                <experience-record :record="exp" @mounted="swiperInit"/> 
+                            </div>
+                        </div> 
+                        <div class="swiper-pagination"></div>
                     </div>
                     <div class="about__work-technologies">
                         <h3 class='heading-3'>
                             Main technologies I use.
-                            <ul class="about__tech-list">
-                                <li v-for="tech in techstack" :key="tech">
-                                    <img :src="`assets/icons/${tech}.svg`" alt="" />
-                                    <p>{{ tech }}</p>
-                                </li>
-                            </ul>
-                            
                         </h3>
+                        <ul class="about__tech-list">
+                            <li v-for="tech in techstack" :key="tech">
+                                <img :src="`assets/icons/${tech}.svg`" alt="" />
+                                <p>{{ tech }}</p>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
