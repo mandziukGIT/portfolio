@@ -1,9 +1,9 @@
 .header__navigation {
     position: fixed;
-    top: 72.5px;
+    top: 62.5px;
     right: -100%;
     width: 100%;
-    height: calc(100vh - 72.5px);
+    height: calc(100vh - 62.5px);
     background-color: #fff;
     transition: right 0.35s ease-in-out, opacity 0.45s ease-in-out;
     z-index: 999;

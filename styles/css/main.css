@@ -116,7 +116,7 @@ button {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 25px
+    padding: 10px 25px
 }
 
 /* HOME section */
@@ -424,6 +424,10 @@ button {
 .about__swiper {
     --swiper-theme-color: #fff;
     margin: 75px 0;
+}
+
+.projects__swiper {
+    margin-top: 75px;
 }
 
 .swiper-wrapper {
