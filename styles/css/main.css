@@ -544,20 +544,33 @@ button {
 
 .footer__socials {
     display: flex;
-    flex-direction: column;
     gap: 20px;
 }
 
 .footer .content-wrapper {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    align-items: center;
+    gap: 20px;
 }
 
 .footer p {
-    align-self: flex-end;
     font-size: 14px;
+    order: 3;
 }
 
-.footer a {
-    align-self: center;
+@media (min-width: 640px) {
+    .footer .content-wrapper {
+        justify-content: space-between;
+        flex-direction: row;
+    }
+    .footer p {
+        align-self: flex-end;
+        font-size: 14px;
+    }
+    .footer__socials {
+        flex-direction: column;
+        order: 3;
+    }
 }

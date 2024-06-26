@@ -40,7 +40,7 @@
                     spaceBetween: 50
                 },
                 1240: {
-                    slidesPerView: 3,
+                    slidesPerView: 2,
                     spaceBetween: 50
                 }
             }
@@ -83,6 +83,8 @@
                     techstack,
                     experience,
                     toggleMobileNav,
+                    projectsSwiperInit,
+                    experienceSwiperInit
                 }
             },
         }).mount('#app');
@@ -98,7 +100,7 @@
                 <nav ref="nav" class="header__navigation">
                     <ul>
                         <li @click="toggleMobileNav"><a href="#about">About me</a></li>
-                        <li @click="toggleMobileNav"><a href="#projects">Project</a></li>
+                        <li @click="toggleMobileNav"><a href="#projects">Projects</a></li>
                         <li @click="toggleMobileNav"><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
