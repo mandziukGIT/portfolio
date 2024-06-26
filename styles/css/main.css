@@ -36,6 +36,11 @@ ul {
     list-style: none;
 }
 
+section {
+    overflow: hidden;
+
+}
+
 button {
     background-color: transparent;
     border: none;
@@ -51,7 +56,7 @@ button {
 
 .heading-2 {
     font-size: clamp(2rem, 1.5909rem + 1.8182vw, 3rem);
-    line-height: 50%;
+    line-height: 90%;
 }
 
 .heading-3 {
@@ -61,6 +66,7 @@ button {
 .heading-2:after {
     content: '.';
     font-size: 96px;
+    line-height: 0;
 }
 
 #projects .heading-2:after, #contact .heading-2:after {
@@ -475,7 +481,7 @@ button {
 .contact__options-list {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
     gap: 25px;
     margin: 100px 0;
     padding: 50px 0;
@@ -509,6 +515,7 @@ button {
     font-family: "Roboto condensed", sans-serif;
     font-weight: 700;
     transition: transform 0.2s ease;
+    text-wrap: nowrap;
 }
 
 .contact__option:hover {
