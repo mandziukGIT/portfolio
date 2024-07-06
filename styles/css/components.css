@@ -77,7 +77,7 @@
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
 }
 
-.project-card--in-progress img, .project-card--in-progress .project-card__project-info {
+.project-card--in-progress img, .project-card--in-progress .project-card__info {
     filter: blur(4px);
 }
 
