@@ -102,14 +102,23 @@ button {
     padding: 0 20px ;
 }
 
+.overflow-hidden {
+    overflow: hidden;
+}
+
 /* HEADER */
 
 .header {
     position: fixed;
-    width: 100vw;
+    width: 100%;
     top: 0;
     background-color: white;
     z-index: 100;
+    transition: top 0.5s ease-in-out;
+}
+
+.header--folded {
+    top: -62.5px;
 }
 
 .header > div {

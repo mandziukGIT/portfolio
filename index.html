@@ -72,6 +72,10 @@
                 fetch('./data/projects.json').then(res => res.text()).then(res => projects.value = JSON.parse(res));
                 
                 const toggleMobileNav = () => {
+                    if(window.innerWidth >  640) return;
+
+                    const body = document.querySelector('body');
+                    body.classList.toggle('overflow-hidden')
                     nav.value.classList.toggle('active');
                     hamburger.value.classList.toggle('active');
                 } 
@@ -88,6 +92,26 @@
                 }
             },
         }).mount('#app');
+
+        const header = document.querySelector('.header');
+
+        let previousScrollY = header.top;
+
+         function handleScroll() {
+
+            if(window.scrollY < 150) return;
+
+            const currentScrollY = window.scrollY;
+            
+            if (currentScrollY > previousScrollY) {
+                header.classList.add('header--folded')
+            } else if (currentScrollY < previousScrollY) {
+                header.classList.remove('header--folded')
+            }
+            previousScrollY = currentScrollY;
+        }
+
+        window.addEventListener('scroll', handleScroll);
     </script>
 </head>
 <body>
