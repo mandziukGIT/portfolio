@@ -72,6 +72,10 @@
                 fetch('./data/projects.json').then(res => res.text()).then(res => projects.value = JSON.parse(res));
                 
                 const toggleMobileNav = () => {
+                    if(window.innerWidth >  640) return;
+
+                    const body = document.querySelector('body');
+                    body.classList.toggle('overflow-hidden')
                     nav.value.classList.toggle('active');
                     hamburger.value.classList.toggle('active');
                 } 
@@ -88,6 +92,26 @@
                 }
             },
         }).mount('#app');
+
+        const header = document.querySelector('.header');
+
+        let previousScrollY = header.top;
+
+         function handleScroll() {
+
+            if(window.scrollY < 150) return;
+
+            const currentScrollY = window.scrollY;
+            
+            if (currentScrollY > previousScrollY) {
+                header.classList.add('header--folded')
+            } else if (currentScrollY < previousScrollY) {
+                header.classList.remove('header--folded')
+            }
+            previousScrollY = currentScrollY;
+        }
+
+        window.addEventListener('scroll', handleScroll);
     </script>
 </head>
 <body>
@@ -119,12 +143,20 @@
                         <div class="badge__beacon"></div>
                         <p class="badge__label">OPEN TO WORK</p>
                     </div>
-                    <p class="home__greeting">Hi my name is</p>
+                    <div class="home__role">
+                        <img src="assets/icons/vue-green.svg" alt="vue icon">
+                        <p>FRONTEND DEVELOPER</p>
+                    </div>
                     <h1 class="home__main-heading heading-1 text-gradient">
-                        Kacper Mandziuk<br>
+                        Kacper Mandziuk
                     </h1> 
-                    <p class="home__brief">Im self thought <span class="home__brief--bold text-gradient">WEB DEVELOPER</span>, with over 3 years of commercial experience. Of course I love to code, but it is only one thing among others.</p>
-                    <a class="button" href="#about">Explore my work<img src='assets/icons/explore.svg' alt='explore icon' /></a>
+                    <p class="home__brief">
+                        Team collaboration, user-centric design, problem-solving, translating solutions into code&nbsp-&nbsp<span>this is my expertise.</span><br> I transform ideas into robust, user-friendly web applications through strategic thinking and technical skill
+                    </p>
+                    <a class="button" href="#projects">
+                        Explore my work
+                        <img src='assets/icons/explore.svg' alt='explore icon' />
+                    </a>
                 </div>
                 <div class="home__hero-image">
                     <img src="assets/images/freelancer.svg" alt="hero image">
