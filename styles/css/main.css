@@ -524,7 +524,7 @@ button {
 }
 
 .footer__socials img {
-    width: 40px;
+    width: 30px;
 }
 
 .footer__socials {
@@ -537,7 +537,7 @@ button {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    gap: 30px;
 }
 
 .footer p {
