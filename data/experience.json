@@ -3,9 +3,9 @@
         "id": "1",
         "company": "Monterail",
         "position": "Frontend Developer",
-        "employment_start": "05.2021",
+        "employment_start": "02.2021",
         "employment_finish": "03.2023",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dictum luctus vulputate. Cras et nisi eu justo porta ultrices quis id ipsum. Nam odio arcu, efficitur eu sagittis luctus, sagittis ac turpis. Ut et tortor luctus, ultrices urna vitae, eleifend arcu. Suspendisse eget iaculis quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dictum luctus vulputate. Cras et nisi eu justo porta ultrices quis id ipsum. Nam odio arcu, efficitur eu sagittis luctus, sagittis ac turpis.",
+        "description": "After successfully completing a Vue bootcamp conducted by Monterail, I joined company as a junior front-end developer and quickly transitioned to a regular position within 6 months. During this time, I participated in diverse projects, including applications for an international non-profit, a live shopping platform, and a luxury fashion brand e-commerce. Each project involved collaboration within a global team, working closely with developers, testers, project managers, clients, and other stakeholders within an Agile development environment",
         "badges": [
             "official vue partner",
             "remote",
@@ -21,7 +21,7 @@
         "position":"Javascript Internship",
         "employment_start": "03.2019",
         "employment_finish": "03.2020",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dictum luctus vulputate. Cras et nisi eu justo porta ultrices quis id ipsum. Nam odio arcu, efficitur eu sagittis luctus, sagittis ac turpis. Ut et tortor luctus, ultrices urna vitae, eleifend arcu. Suspendisse eget iaculis quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dictum luctus vulputate. Cras et nisi eu justo porta ultrices quis id ipsum. Nam odio arcu, efficitur eu sagittis luctus, sagittis ac turpis.",
+        "description": "I joined a dynamic 4-person team at Auroria working within an agile environment. Primely I was responsible for building front-end interfaces and back-end applications. I played a key role in developing a tool enabling users to compare ring offers from different producers. Leveraging this experience, I collaborated with the team to craft an e-commerce platform for customizable jewelry. Finally, I had the incredible opportunity to contribute to the development of Auroria's large-scale online store, including critical components like the warehouse management system.",
         "badges": [
             "office", "e-commerce"
         ],

@@ -36,11 +36,6 @@ ul {
     list-style: none;
 }
 
-section {
-    overflow: hidden;
-
-}
-
 button {
     background-color: transparent;
     border: none;
@@ -245,7 +240,7 @@ button {
     color: white;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 640px) {
     #about {
         padding-top: 100px;
     }
@@ -322,70 +317,41 @@ button {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 3rem;
     grid-area: about;
+    max-width: 400px;
 }
 
+.about__about h3 {
+    margin: 0 auto;
+} 
 
-.about__about p {
-    font-family: 'Roboto mono', monospace;
-    font-size: 18px;
-    line-height: 150%;
-    text-align: center;
-}
+.about__about h3::after {
+    content: ' 🇵🇱';
+    font-size: 32px;
+} 
 
-.about__about a {
-    position: relative;
-    font-family: "Montserrat", sans-serif;
-    font-size: 18px;
+.about__about p:last-child {
     font-weight: 700;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    width: fit-content;
-    text-align: center;
-}
-
-.about__about a::after {
-    content: url('/portfolio/assets/icons/arrow-right.svg') url('/assets/icons/arrow-right.svg');
-    position: absolute;
-    right: -40px;
-    opacity: 1;
-    transition: opacity 0.3s ease-out, right 0.3s ease-out;
-    width: 28px;
-    height: 28px;
-}
-
-.about__about a:hover::after {
-    right: -80px;
-    opacity: 0;
 }
 
 @media (min-width: 640px) {
-    .about__about a {
-        font-size: 22px;
-    }
-
-    .about__about p {
-        font-size: 22px;
+    .about__about {
         width: 80%;
-        margin: 0 auto;
+        max-width: unset;
+    }
+    .about__about p {
+        font-size: 20px;
     } 
 }
-
-@media (min-width: 1024px) {
-    .about__about p {
-        font-size: 26px;
-        width: 100%;
-    }
-}
-
 
 .about__socials {
     display: flex;
     justify-content: center;
     gap: 20px;
     grid-area: links;
+    padding-top: 20px;
 }
 
 .about__socials img {
@@ -404,7 +370,6 @@ button {
 .about__work-technologies {
     text-align: center;
 }
-
 
 .about__work-headline {
     display: flex;
@@ -427,8 +392,6 @@ button {
     }
     
 }
-
-
 
 .about__work-headline a {
     transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
@@ -477,7 +440,6 @@ button {
     width: 50px;
     height: 50px;
  }
- 
 
 .about__tech-list p {
     font-size: 16px;
@@ -501,6 +463,7 @@ button {
 /* CONTACT section */
 
 #contact {
+    overflow: hidden;
     padding-top: 100px;
 }
 
