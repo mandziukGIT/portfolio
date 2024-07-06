@@ -36,11 +36,6 @@ ul {
     list-style: none;
 }
 
-section {
-    overflow: hidden;
-
-}
-
 button {
     background-color: transparent;
     border: none;
@@ -245,7 +240,7 @@ button {
     color: white;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 640px) {
     #about {
         padding-top: 100px;
     }
@@ -468,6 +463,7 @@ button {
 /* CONTACT section */
 
 #contact {
+    overflow: hidden;
     padding-top: 100px;
 }
 
