@@ -1,4 +1,4 @@
-import { onMounted } from "vue";
+import { onMounted, computed } from "vue";
 
 export default {
   props: {
@@ -11,20 +11,34 @@ export default {
       ctx.emit('mounted')
     })
 
-    return {}
+    const inProgress = computed(() => !props.project.url)
+
+    const projectName = computed(() => !inProgress.value ? props.project.name : 'Coming soon');
+
+    const websiteUrl = computed(() => !inProgress.value ? props.project.url : null);
+
+    const githubUrl = computed(() => !inProgress.value ? props.project.github_repository : null);
+
+    const imageUrl = computed(() => `assets/images/${ inProgress.value ? 'preview-in-progress' : props.project.name.toLowerCase()}.jpg`);
+
+    return {
+      imageUrl,
+      githubUrl,
+      websiteUrl,
+      inProgress,
+      projectName
+    }
 
   },
   template: /*html*/ `
-    <div class="project-card">
-      <h4 class="project-card__title">{{ project.name }}</h4>
-      <div class="project-card__project-preview">
-        <img :src="'assets/images/' + project.name.toLowerCase() + '.jpg'" alt="project screenshot">
-      </div>
-      <div class="project-card__project-info">
+    <div :class="{ 'project-card--in-progress': inProgress, 'project-card': true}">
+      <h4 class="project-card__title">{{ projectName }}</h4>
+      <img class="project-card__preview" :src="imageUrl" alt="project preview" />
+      <div class="project-card__info">
         <p>{{ project.description }}</p>
           <div class="project-card__links">
-            <a :href="project.url">Live</a>
-            <a :href="project.github_repository">Github</a>
+            <a :href="websiteUrl">Website</a>
+            <a :href="githubUrl">Github</a>
           </div>
        </div>
     </div>

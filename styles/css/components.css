@@ -57,7 +57,6 @@
     max-width: 450px;
     margin: 0 auto;
     align-items: center;
-
 }
 
 .project-card__title {
@@ -66,24 +65,24 @@
     font-size: 20px;
 }
 
-.project-card__project-info p {
+.project-card__info p {
     line-height: 140%;
-    max-width: 400px;
     padding: 20px;
 }
 
-.project-card__project-preview img {
-    position: absolute;
+.project-card__preview {
+    width: 100%;
     aspect-ratio: 16/9;
     transform: scale(1.1);
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
-    left: 0;
-    right: 0;
-    margin: auto;
 }
-.project-card__project-preview {
-    width: 100%;
-    aspect-ratio: 16/9;
+
+.project-card--in-progress img, .project-card--in-progress .project-card__project-info {
+    filter: blur(4px);
+}
+
+.project-card--in-progress a {
+    cursor: default;
 }
 
 .project-card__links {
@@ -93,7 +92,7 @@
     font-weight: 600;
 }
 
-.project-card__links a:nth-child(even) {
+.project-card a:nth-child(even) {
     border: 2px solid transparent;
     border-top: 2px solid white;
     border-radius: 20px;
@@ -102,7 +101,7 @@
 }
 
 
-.project-card__links a:nth-child(odd) {
+.project-card a:nth-child(odd) {
     border: 2px solid transparent;
     border-bottom: 2px solid white;
     border-radius: 20px;
@@ -110,7 +109,8 @@
     transition: border 0.2s ease-in-out;
 }
 
-.project-card__links a:nth-child(even):hover, .project-card__links a:nth-child(odd):hover {
+.project-card:not(.project-card--in-progress) a:nth-child(even):hover,
+.project-card:not(.project-card--in-progress) a:nth-child(odd):hover {
     border: 2px solid white;
 }
 
