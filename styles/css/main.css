@@ -122,20 +122,33 @@ button {
 /* HOME section */
 
 #home {
-    height: 100vh;
+    display: flex;
+    min-height: 100vh;
+    padding: 62.5px 0;
 }
 
 .home__container {
    display: flex;
    justify-content: center;
-   gap: 100px;
-   height: 100%;
 }
 
 .home__hero-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.home__role {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.home__role img {
+    width: 36px;
 }
 
 .home__hero-text .badge {
@@ -148,12 +161,6 @@ button {
 
 .home__main-heading {
     font-weight: 800;
-}
-
-.home__greeting {
-    font-size: 1rem;
-    font-weight: 700;
-    padding-bottom: 10px;
 }
 
 .home__hero-text a {
@@ -170,9 +177,14 @@ button {
 }
 
 .home__brief {
-    font-size: 1rem;
+    font-size: 1.1rem;
     max-width: 400px;
     margin: 40px 0;
+    line-height: 150%;
+}
+
+.home__brief span {
+    font-weight: 600;
 }
 
 .home__brief--bold {
@@ -180,17 +192,13 @@ button {
 }
 
 @media (min-width: 640px) {
-    #home {
-        height: auto;
-        margin: 125px 0 75px 0;
-    }
-
-    .home__greeting {
+    .home__role {
         font-size: 1.4rem;
     }
 
     .home__brief {
         font-size: 1.2rem;
+        max-width: 560px;
     }
 
     .home__hero-text .badge {
@@ -208,6 +216,11 @@ button {
 @media (min-width: 1024px) {
     .home__hero-image {
         display: block;
+        padding-left: 75px;
+        margin: auto;
+    }
+    .home__hero-text {
+        flex-shrink: 0;
     }
     .home__container {
         justify-content: space-between;
